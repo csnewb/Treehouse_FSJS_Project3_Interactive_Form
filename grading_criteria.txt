@@ -1,0 +1,151 @@
+
+
+
+//Todo:---------- Job Role Section ------------ DONE
+//The "Job Role" section has an <input type="text"> field where users can enter a custom job role. If the user selects
+// "Other" in the "Job Role" drop-down menu, they can enter info into the "Other job role" text field. This field
+// should be hidden by default and only be displayed if "Other" is selected in the drop-down menu.
+//
+// Hide the "text field" with the id of "other-job-role" so it is not displayed when the form first loads.
+// Program the "Job Role" <select> element to listen for changes. When a change is detected, display/hide the
+// "text field" based on the selection in the drop-down menu.
+
+//Todo:----------- T-Shirt Info Section --------------- DONE
+
+// The options in the "Color" drop-down menu are not available for each t-shirt design. So the user shouldn’t be able
+// to see or choose a color option until they have chosen a design.
+//
+//     Disable the "Color" <select> element.
+//     Set up the "Design" <select> element to listen for changes. When a change is detected:
+//     The "Color" <select> element should be enabled.
+//     The "Color" <select> element should display an available color.
+//     The "Color" dropdown menu should display only the color options associated with the selected design. For
+// example:
+//     If the user selects "Theme - JS Puns" then the "Color" menu should only display "Cornflower Blue," "Dark Slate
+// Grey," and "Gold." If the user selects "Theme - I ♥ JS" then the "Color" menu should only display "Tomato," "Steel
+// Blue," and "Dim Grey."
+
+// NOTE
+// A select element is used for the color selection. There are two parts to a select element display: the element
+// field and the drop-down menu which opens after clicking on the field. Both the "Color" field and drop-down menu
+// must correctly update when the user selects a different theme. Neither should be empty or display
+// unavailable theme / color combinations.
+//
+//     The selected attribute can determine which option element is displayed in the select field.
+//     The hidden attribute can prevent option elements from being displayed in the drop down menu.
+
+
+//Todo:------------ Activities Section -------------- DONE
+
+// Activities Section
+// The "Total: $" paragraph below the "Register for Activities" section should update to reflect the total cost of all
+// the selected activities.  Add an event listener to the "Register for Activities" fieldset element to listen for
+// changes. When a change is detected: If an activity is checked, the total cost should increase by the value in the
+// data-cost attribute of the activity’s <input type="checkbox"> element. If an activity is unchecked, the total cost
+// should decrease by that amount. The <p> element with the id of "activity-cost" below the activities section should
+// update to reflect the adjustment made.
+
+
+//Todo:------------- Payment Info Section --------------- DONE
+
+// The credit card payment option should be selected for the user by default. So upon page load "Credit Card" should
+// be the selected option of the select element, and the credit card payment section should be the only payment section
+// displayed on the page. When the user selects a different payment option from the drop-down menu, the form should
+// update to display only the chosen payment method section.
+//
+//     Program the "I'm going to pay with" <select> element to listen for user changes.
+//
+//     When a change is detected, hide all payment sections in the form’s UI except the selected one.
+
+
+//Todo:------------ Form Validation ------------------- DONE
+
+// Users shouldn’t be able to submit a form without the required information, or with invalid information. To prevent
+// that from happening, avoid using plugins, libraries, snippets or the built-in HTML5 validation, and create your own
+// custom form validation.
+// Add an event listener to the form element to listen for the submit event. When the form
+// submission is detected, each required form field or section should be validated to ensure that they have been filled
+// out correctly.
+// If any of the following required fields are not valid, the form submission should be prevented.
+// The "Name" field cannot be blank or empty.
+//
+// The "Email Address" field must contain a correctly formatted email address.
+// The email address does not need to be a real email address, just formatted like one. For example
+// brian@teamtreehouse.com. Several characters for the username, preceded by "@", followed by another set of
+// characters, ending with a "." and a couple more characters for the domain name.
+//
+// The "Register for Activities" section must have at least one activity selected. If and only if credit card is the
+// selected payment method:
+//
+// The "Card number" field must contain a 13 - 16 digit credit card number without dashes or spaces. The value does not
+// need to be a real credit card number.
+//
+// The "Zip code" field must contain a 5-digit number. The "CVV" field must
+
+// contain a 3-digit number.
+//
+// Pro Tip A recommended approach is to create helper functions for each of the required
+// fields to be validated. For example, for the "Name" field, a function could check the "Name" field’s value. If it
+// equals an empty string or only blank spaces, the function could log out a helpful statement and return false.
+// Otherwise, it would return true. And then in the `submit` event listener, you could call that helper function
+// and check what it returns: if it returns false, you would prevent the form from submitting. Otherwise, you
+// would allow the `submit` handler to either submit or move on to checking the next required field.
+
+
+//Todo:------------ The Activities Section ------------ DONE
+
+// Pressing the tab key on your keyboard moves the focus state from one input to the next, but the focus indicators in
+// the "Register for Activities" section aren’t very obvious. To make the form more accessible we'll add visible focus
+// states to these activities. This will give the users that use keyboards to navigate your page a visual confirmation
+// of where they are located.  Program all of the activity checkbox input elements to listen for the focus and blur
+// events. When the focus event is detected, add the ".focus" class to the checkbox input’s parent label element. When
+// the blur event is detected, remove the .focus class from the label element that possesses it. It can be helpful here
+// to directly target the element with the className of .focus in order to remove it.
+
+//Todo:------------ Visual Validation Errors ------------ DONE
+
+// Make the form validation errors obvious to all users. With the custom form validation checks you’ve already written,
+// invalid form fields will prevent the form from submitting, but all users should be presented with clear
+// notifications of which fields are invalid.
+// When the user tries to submit the form, if a required form field or section is invalid:
+// Add the ‘.not-valid’ class to the parent element of the form field or section. For the activity
+// section, the parent element would be the fieldset element. For the other required inputs, the parent element would
+// be a label element.
+// Remove the ‘.valid’ class from the parent element of the form field or section.
+// Display the .hint element associated with the form field or section.
+//
+// If a required form field or section is valid:
+// Add the ‘.valid’ class to the parent element of the form field or section.
+// Remove the ‘.not-valid’ class from the parent element of the form field or section.
+// Hide the .hint element associated with that element.
+//
+// JavaScript alerts and prompts should not be used in your form validation error indications.
+//
+// If the user tries to submit an empty form, all form validation error indications should be displayed at once,
+// rather than one at a time.
+//
+// Pro Tip A recommended approach to this part of the project is to create helper functions that accept an argument
+// for the element that is being validated. For example, the function could accept an argument for the text input
+// element that was checked. Then the function would update the styles for that element’s parent element and the last
+// child of that parent element. One function could update the styles when errors are detected. And another function
+// could update the styles when errors are resolved.
+
+
+//Todo:------------ Finishing the Project ------------ DONE
+
+// The final stage of the project is perhaps the most important. This is where your developer skills really shine as
+// you carefully double-check that you've accomplished all requirements and that your project is ready for submission.
+// Code Comments - It’s a best practice for development code to be well commented. Replace provided comments with your
+// own to briefly describe your code and what it does. Code Readability - Readability is second only to functionality.
+// Double-check your code to ensure the spacing and indentation is consistent and in keeping with best practices.
+// Quality Assurance Testing - This is a key step in the development process. Open and run your app. Open the Chrome
+// DevTools console and ensure that there are no errors displayed when the app is being used and tested. Pretend to be
+// a user and test all aspects of functionality and every possible state of the app, while monitoring the console for
+// bugs and resolving any that arise. Cross Browser Consistency - To pass, your project only needs to work in Chrome
+// but it’s common for developers to test their projects in multiple browsers to know how they will perform out in the
+// wild.
+//
+// Pro Tip Before submitting your project it's always a good idea to get an additional pair of eyes on it. This will
+// avoid your project from being returned to you if you missed one of the requirements. You can share a link to your
+// GitHub repository in the #review-my-project channel on Slack and a fellow student or staff member will happily
+// have a look at it.
