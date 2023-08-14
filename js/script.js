@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 shirtDesigns.addEventListener('change', (e) => {
     designValue = shirtDesigns.value;
     colorSelect.disabled = false;
+    colorSelect.value = '';
 
     for (let i = 0; i < colorSelect.options.length; i++) {
         const option = colorSelect.options[i];
